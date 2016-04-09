@@ -2,7 +2,7 @@ var automat = {
     translation: {},
     d: 1,
     status: [],
-    wait: 500,
+    wait: 250,
     border: "loop",
     run: false,
     generation: 0,
@@ -46,6 +46,11 @@ var automat = {
         $("#div_paint svg").click(automat.set_cell);
     },
     
+    /**
+     * Fängt click event auf Zeichenfläsche ab und ändert angeklickte Zelle
+     * @param {type} e
+     * @returns {undefined}
+     */
     set_cell: function(e){
         var elm = $(this);
         var xPos = e.pageX - elm.offset().left;
@@ -161,7 +166,7 @@ var automat = {
             }
         }
         
-        automat.draw_cells(cells);
+        automat._draw_cells(cells);
         
         automat.generation++;
         $.publish("automat.step", [automat.generation, population]);
@@ -250,7 +255,7 @@ var automat = {
             }
         }
         
-        automat.draw_cells(cells);
+        automat._draw_cells(cells);
         
         automat.generation++;
         $.publish("automat.step", [automat.generation, population]);
@@ -314,11 +319,11 @@ var automat = {
 
        set.translate(automat.grid.cell_size_px/2 + 1, automat.grid.cell_size_px/2 + 1);
         
-       grid.cells = automat.center_cells(automat.grid.grid_size_cells,grid.cells);
-       automat.draw_cells(grid.cells);
+       grid.cells = automat._center_cells(automat.grid.grid_size_cells,grid.cells);
+       automat._draw_cells(grid.cells);
     },
     
-    center_cells: function(size, cells){
+    _center_cells: function(size, cells){
         
          if (cells.length < size){
             //höhe vergrößern
@@ -364,7 +369,7 @@ var automat = {
         return cells;
     },
     
-    draw_cells: function(cells){
+    _draw_cells: function(cells){
         $.each(cells, function(i_row, row){
             $.each(row, function(i_col, value){
                 if(value != automat.grid.cell_values[i_row][i_col]){
