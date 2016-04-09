@@ -19,7 +19,7 @@
                     "file" : "grid/gol_perm.json"
                 },
                 {
-                    "name" : "Kleider",
+                    "name" : "Gleider",
                     "file" : "grid/gol_glide.json"
                 }
             ]
