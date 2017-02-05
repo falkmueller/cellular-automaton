@@ -1,6 +1,6 @@
 #Cellular automat
 
-![Example Screen](http://code.falk-m.de/git_images/automat.png)
+![Screnshot](screenshot.jpg)
 
 ##Installation
 - only copy to your host.
