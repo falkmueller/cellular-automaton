@@ -1,6 +1,6 @@
 #Cellular automat
 
-![Screnshot](screenshot.jpg)
+![Screnshot](screenshot.png)
 
 ##Installation
 - only copy to your host.
